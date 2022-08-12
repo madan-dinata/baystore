@@ -1,16 +1,17 @@
-import {DataTypes} from "sequelize";
+import {Sequelize} from "sequelize";
 import { db } from "../config/db.config.js";
 
-const Payment = db.define("Payments", {
-    ID: {
-        type: DataTypes.INTEGER
-    },
+const { DataTypes } = Sequelize
+
+const Payment = db.define("payments", {
     title: {
         type: DataTypes.STRING
     },
     img: {
-        type: DataTypes.STRING
+        type: DataTypes.BLOB('long')
     }
+}, {
+    freezeTableName: true
 })
 
 export default Payment

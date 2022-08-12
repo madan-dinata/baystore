@@ -1,10 +1,9 @@
-import {DataTypes} from "sequelize";
+import {Sequelize} from "sequelize";
 import { db } from "../config/db.config.js";
 
+const { DataTypes } = Sequelize
+
 const User = db.define("users", {
-    ID: {
-        type: DataTypes.INTEGER
-    },
     fullname: {
         type: DataTypes.STRING
     },
@@ -17,6 +16,8 @@ const User = db.define("users", {
     role: {
         type: DataTypes.STRING
     }
+}, {
+    freezeTableName: true
 })
 
 export default User
