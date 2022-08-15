@@ -9,10 +9,10 @@ import {
 
 const router = Router()
 
-router.get("/game", getGame)
-router.get("/game/:id", getGameById)
-router.post("/game", createGame)
-router.put("/game/:id", updateGame)
-router.delete("/game/:id", deleteGame)
+router.get("/", getGame)
+router.get("/:id", getGameById)
+router.post("/", createGame)
+router.put("/:id", updateGame)
+router.delete("/:id", deleteGame)
 
 export default router

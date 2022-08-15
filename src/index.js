@@ -7,10 +7,7 @@ import path from "path";
 
 import { PORT } from "./config/config.js"
 import { db } from "./config/db.config.js";
-import categoryRouter from "./routers/category.router.js"
-import itemRouter from "./routers/item.router.js"
-import paymentRouter from "./routers/payment.router.js"
-import gameRouter from "./routers/game.router.js"
+import apiRouter from "./routers/index.router.js"
 
 const app = express()
 const __dirname = path.resolve("src")
@@ -34,10 +31,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(logger("dev"))
 
-app.use(api, categoryRouter)
-app.use(api, itemRouter)
-app.use(api, paymentRouter)
-app.use(api, gameRouter)
+app.use(api, apiRouter)
 
 app.get("/", (req, res) => {
     res.render("pages/index", { title: "Home Page" });

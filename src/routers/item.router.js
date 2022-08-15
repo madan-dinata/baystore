@@ -9,10 +9,10 @@ import {
 
 const router = Router()
 
-router.get("/item", getItem)
-router.get("/item/:id", getItemById)
-router.post("/item", createItem)
-router.put("/item/:id", updateItem)
-router.delete("/item/:id", deleteItem)
+router.get("/", getItem)
+router.get("/:id", getItemById)
+router.post("/", createItem)
+router.put("/:id", updateItem)
+router.delete("/:id", deleteItem)
 
 export default router

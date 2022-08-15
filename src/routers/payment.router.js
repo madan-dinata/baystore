@@ -9,10 +9,10 @@ import {
 
 const router = Router()
 
-router.get("/payment", getPayment)
-router.get("/payment/:id", getPaymentById)
-router.post("/payment", createPayment)
-router.put("/payment/:id", updatePayment)
-router.delete("/payment/:id", deletePayment)
+router.get("/", getPayment)
+router.get("/:id", getPaymentById)
+router.post("/", createPayment)
+router.put("/:id", updatePayment)
+router.delete("/:id", deletePayment)
 
 export default router
